@@ -46,5 +46,3 @@ export VISUAL=nvim
 source_if_exists "$HOME/.asdf/asdf.sh"
 source_if_exists "$HOME/.asdf/completions/asdf.bash"
 source_if_exists "$HOME/.cargo/env"
-
-alias dotcfg='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
