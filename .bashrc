@@ -1,17 +1,17 @@
 # ~/.bashrc
 # If not running interactively, do nothing
 case $- in
-	*i*) ;;
-	*) return;;
+  *i*) ;;
+  *) return;;
 esac
 
 get_git_branch() {
-	git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+  git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 source_if_exists() {
-	if [ -f "$1" ] ; then
-		. "$1"
-	fi
+  if [ -f "$1" ] ; then
+    . "$1"
+  fi
 }
 
 # Resize window after each command acordingly
@@ -22,7 +22,7 @@ PS1='[\u@\h \w]\[\e[32m\]$(get_git_branch)\[\e[0m\]\n$ '
 
 # Add .bin for user-made executables
 if [ -d ~/.bin ] ; then
-	PATH="$PATH:~/.bin"
+  PATH="$PATH:~/.bin"
 fi
 
 # Aliases
@@ -31,7 +31,7 @@ source_if_exists "$HOME/.bash_aliases"
 # Completions
 source_if_exists "$HOME/.bash_completions"
 if [ -d /etc/bash_completion ] && ! shopt -oq posix; then
-	. /etc/bash_completion
+  . /etc/bash_completion
 fi
 
 # History
@@ -47,4 +47,4 @@ source_if_exists "$HOME/.asdf/asdf.sh"
 source_if_exists "$HOME/.asdf/completions/asdf.bash"
 source_if_exists "$HOME/.cargo/env"
 
-alias gconfig='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias dotcfg='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
