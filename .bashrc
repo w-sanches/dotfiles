@@ -38,6 +38,7 @@ fi
 export HISTSIZE=5000
 export HISTCONTROL=ignoredups:ignorespace
 export HISTIGNORE="clear":"cd ~":"cd ..":"cd -":"fg":"ls":"la"
+export PROMPT_COMMAND="history -a; history -n"
 
 # NeoVim as default editor
 export EDITOR=nvim
