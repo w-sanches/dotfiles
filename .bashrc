@@ -39,10 +39,10 @@ export HISTSIZE=5000
 export HISTCONTROL=ignoredups:ignorespace
 export HISTIGNORE="clear":"cd ~":"cd ..":"cd -":"fg":"ls":"la"
 
-# Vim as default editor
+# NeoVim as default editor
 export EDITOR=nvim
 export VISUAL=nvim
 
+# Other nice tools
 source_if_exists "$HOME/.asdf/asdf.sh"
 source_if_exists "$HOME/.asdf/completions/asdf.bash"
-source_if_exists "$HOME/.cargo/env"
