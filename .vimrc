@@ -9,7 +9,7 @@ Plug 'tpope/vim-surround'
 call plug#end()
 
 "++ COLOUR SCHEME+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-colorscheme gruvbox
+silent! colorscheme gruvbox
 set background=light
 filetype plugin indent on
 set laststatus=2
