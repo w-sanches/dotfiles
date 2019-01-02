@@ -18,7 +18,7 @@ source_if_exists() {
 shopt -s checkwinsize
 
 # Prompt
-PS1='[\u@\h \w]\[\e[32m\]$(get_git_branch)\[\e[0m\]\n$ '
+PS1="[\[\e[32m\]\u\[\e[m\]@\[\e[34m\]\h\[\e[m\]:\[\e[31m\]\W\[\e[m\]]\$(get_git_branch)\n$ "
 
 # Add .bin for user-made executables
 if [ -d ~/.bin ] ; then
