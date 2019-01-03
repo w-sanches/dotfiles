@@ -25,6 +25,11 @@ if [ -d ~/.bin ] ; then
   PATH="$PATH:~/.bin"
 fi
 
+# Add sbin for more executables
+if [ -d /usr/local/sbin ] ; then
+  PATH="$PATH:/usr/local/sbin"
+fi
+
 # Aliases
 source_if_exists "$HOME/.bash_aliases"
 
