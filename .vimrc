@@ -81,3 +81,5 @@ noremap <F12> :setlocal foldenable!<CR>
 " Copy path to clipboard
 nnoremap <Leader>yc :let @+=expand('%:p')<CR>
 nnoremap <Leader>yp :let @+=expand('%:p') . ':' . line(".")<CR>
+" Show me those buffers
+nnoremap <leader>b :ls<cr>:b<space>
