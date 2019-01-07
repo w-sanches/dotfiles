@@ -5,20 +5,12 @@ alias dotcfg='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # Enable color support for commands
 if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto'
-    alias dir='dir --color=auto'
-    alias vdir='vdir --color=auto'
-
     alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
 fi
 
 # Add useful ls aliases
 alias l='ls -hAlF'
 alias la='ls -A'
-
-# Get rid of a boring test...
-alias sl='ls'
 
 # Jobs management
 alias jobs='jobs -l'
