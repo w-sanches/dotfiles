@@ -34,6 +34,7 @@ fi
 source_if_exists "$HOME/.bash_aliases"
 
 # Completions
+source_if_exists "$HOME/.git_completions"
 source_if_exists "$HOME/.bash_completions"
 if [ -d /etc/bash_completion ] && ! shopt -oq posix; then
   . /etc/bash_completion
