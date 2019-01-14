@@ -34,4 +34,4 @@ alias ports='netstat -tulanp'
 # NeoVim!
 alias vim='nvim'
 alias vimdiff='nvim -d'
-alias vimrc='nvim ~/.vimrc'
+alias vimrc='$EDITOR ~/.vimrc'
