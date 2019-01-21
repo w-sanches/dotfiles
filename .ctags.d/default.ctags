@@ -1,5 +1,6 @@
 --recurse=yes
 --exclude=.git
+--exclude=node_modules
 
 --langdef=Elixir
 --langmap=Elixir:.ex.exs
