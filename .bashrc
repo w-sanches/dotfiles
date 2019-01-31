@@ -51,6 +51,10 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export EDITOR=nvim
 export VISUAL=nvim
 
+# Keep history on iex
+export ERL_AFLAGS="-kernel shell_history enabled"
+
 # Other nice tools
 source_if_exists "$HOME/.asdf/asdf.sh"
 source_if_exists "$HOME/.asdf/completions/asdf.bash"
+
