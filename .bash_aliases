@@ -1,4 +1,7 @@
 # ~/.bash_aliases
+# Update bash configs with a simple command
+alias resource='source $HOME/.bash_profile'
+
 # Easy way to handle dotfiles repository
 alias dotcfg='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
