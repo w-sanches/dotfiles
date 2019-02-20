@@ -21,8 +21,8 @@ shopt -s checkwinsize
 PS1="[\[\e[32m\]\u\[\e[m\]@\[\e[34m\]\h\[\e[m\]:\[\e[31m\]\W\[\e[m\]]\$(get_git_branch)\n$ "
 
 # Add .bin for user-made executables
-if [ -d ~/.bin ] ; then
-  PATH="$PATH:~/.bin"
+if [ -d $HOME/.bin ] ; then
+  PATH="$PATH:$HOME/.bin"
 fi
 
 # Add sbin for more executables
