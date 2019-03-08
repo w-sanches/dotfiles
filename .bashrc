@@ -41,7 +41,7 @@ if [ -d /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # History
-export HISTSIZE=5000
+export HISTSIZE=20000
 export HISTCONTROL=ignoredups:ignorespace
 export HISTIGNORE="clear":"cd ~":"cd ..":"cd -":"fg":"ls":"la"
 shopt -s histappend
