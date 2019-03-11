@@ -2,15 +2,15 @@
 call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jremmen/vim-ripgrep'
+Plug 'junegunn/seoul256.vim'
 Plug 'kien/ctrlp.vim'
-Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
 call plug#end()
 
 "++ COLOUR SCHEME+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-silent! colorscheme gruvbox
+silent! colorscheme seoul256
 set background=light
 filetype plugin indent on
 set laststatus=2
