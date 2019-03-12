@@ -17,9 +17,6 @@ set laststatus=2
 syntax enable
 highlight Folded ctermbg=lightgrey
 highlight SpecialKey ctermfg=grey
-if (has("termguicolors"))
- set termguicolors
-endif
 
 "++ CTRL-P++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 if executable('rg')
