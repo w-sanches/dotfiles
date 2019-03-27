@@ -114,7 +114,7 @@ font:
     #style: Italic
 
   # Point size
-  size: 14.0
+  size: 18.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -154,34 +154,36 @@ persistent_logging: false
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-# Colors (Seoul256)
+# Colors (Gruvbox light)
 colors:
   # Default colors
   primary:
-    background: '0xdadada'
-    foreground: '0x4e4e4e'
+    # hard contrast: background = '0xf9f5d7'
+    background: '0xfbf1c7'
+    # soft contrast: background = '0xf2e5bc'
+    foreground: '0x3c3836'
 
   # Normal colors
   normal:
-    black:   '0x4e4e4e'
-    red:     '0xaf5f5f'
-    green:   '0x5f885f'
-    yellow:  '0xaf8760'
-    blue:    '0x5f87ae'
-    magenta: '0x875f87'
-    cyan:    '0x5f8787'
-    white:   '0xe4e4e4'
+    black:   '0xfbf1c7'
+    red:     '0xcc241d'
+    green:   '0x98971a'
+    yellow:  '0xd79921'
+    blue:    '0x458588'
+    magenta: '0xb16286'
+    cyan:    '0x689d6a'
+    white:   '0x7c6f64'
 
   # Bright colors
   bright:
-    black:   '0x3a3a3a'
-    red:     '0x870100'
-    green:   '0x005f00'
-    yellow:  '0xd8865f'
-    blue:    '0x0087af'
-    magenta: '0x87025f'
-    cyan:    '0x008787'
-    white:   '0xeeeeee'
+    black:   '0x928374'
+    red:     '0x9d0006'
+    green:   '0x79740e'
+    yellow:  '0xb57614'
+    blue:    '0x076678'
+    magenta: '0x8f3f71'
+    cyan:    '0x427b58'
+    white:   '0x3c3836'
 
   # Dim colors
   #
@@ -206,7 +208,6 @@ colors:
   #   `- { index: 16, color: '0xff00ff' }`
   #
   indexed_colors: []
-
 # Visual Bell
 #
 # Any time the BEL code is received, Alacritty "rings" the visual bell. Once

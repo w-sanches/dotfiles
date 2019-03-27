@@ -2,15 +2,15 @@
 call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jremmen/vim-ripgrep'
-Plug 'junegunn/seoul256.vim'
 Plug 'kien/ctrlp.vim'
+Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
 call plug#end()
 
 "++ COLOUR SCHEME+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-silent! colorscheme seoul256
+silent! colorscheme gruvbox
 set background=light
 filetype plugin indent on
 set laststatus=2
@@ -36,7 +36,7 @@ set colorcolumn=98,120
 set encoding=utf-8
 set lazyredraw
 set list
-set listchars=tab:→-,extends:›,precedes:‹,trail:·
+set listchars=tab:>-,extends:›,precedes:‹,trail:·
 set mouse=a
 set number
 set numberwidth=4
