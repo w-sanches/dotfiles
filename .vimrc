@@ -11,6 +11,7 @@ call plug#end()
 
 "++ COLOUR SCHEME+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 silent! colorscheme gruvbox
+silent! set termguicolors
 set background=light
 filetype plugin indent on
 set laststatus=2
