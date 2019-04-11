@@ -9,7 +9,7 @@ get_git_branch() {
   git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 source_if_exists() {
-  if [ -f "$1" ] ; then
+  if [[ -f "$1" && -r "$1" ]] ; then
     . "$1"
   fi
 }
