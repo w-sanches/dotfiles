@@ -1,7 +1,6 @@
 "++ PLUGINS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'jremmen/vim-ripgrep'
 Plug 'kien/ctrlp.vim'
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
