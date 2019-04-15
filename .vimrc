@@ -73,7 +73,7 @@ noremap <C-L> <C-W><Right>
 noremap <F2> :set invrelativenumber<CR>
 noremap <F3> :set invnumber<CR>
 noremap <C-]> g<C-]>
-noremap <C-b> :NERDTreeToggle<CR>
+noremap <C-r> :NERDTreeToggle<CR>
 noremap <F12> :setlocal foldenable!<CR>
 " Copy path to clipboard
 nnoremap <Leader>yc :let @+=expand('%:p')<CR>
