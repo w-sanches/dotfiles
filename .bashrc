@@ -30,6 +30,11 @@ if [ -d /usr/local/sbin ] ; then
   PATH="$PATH:/usr/local/sbin"
 fi
 
+# Add cargo binaries
+if [ -d $HOME/.cargo/bin ] ; then
+  PATH="$PATH:$HOME/.cargo/bin"
+fi
+
 # Aliases
 source_if_exists "$HOME/.bash_aliases"
 
