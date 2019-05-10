@@ -63,3 +63,7 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 source_if_exists "$HOME/.asdf/asdf.sh"
 source_if_exists "$HOME/.asdf/completions/asdf.bash"
 
+# Add direnv if present
+if [ -x "$(command -v direnv)" ] ; then
+  eval "$(direnv hook bash)"
+fi
