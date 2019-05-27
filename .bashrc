@@ -67,3 +67,7 @@ source_if_exists "$HOME/.asdf/completions/asdf.bash"
 if [ -x "$(command -v direnv)" ] ; then
   eval "$(direnv hook bash)"
 fi
+
+# Locale settings
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
