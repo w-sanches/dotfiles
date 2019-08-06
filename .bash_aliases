@@ -2,8 +2,9 @@
 # Update bash configs with a simple command
 alias resource='source $HOME/.bash_profile'
 
-# Stop all docker containers
+# Docker userful comands
 alias docker_stopall='docker stop $(docker ps -a -q)'
+alias docker_ps_name="docker ps --format '{{.Names}}'"
 
 # Easy way to handle dotfiles repository
 alias dotcfg='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
