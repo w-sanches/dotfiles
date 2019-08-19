@@ -3,8 +3,9 @@
 alias resource='source $HOME/.bash_profile'
 
 # Docker userful comands
-alias docker_stopall='docker stop $(docker ps -a -q)'
 alias docker_ps_name="docker ps --format '{{.Names}}'"
+alias docker_startall='docker start $(docker ps -a -q)'
+alias docker_stopall='docker stop $(docker ps -a -q)'
 
 # Easy way to handle dotfiles repository
 alias dotcfg='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
