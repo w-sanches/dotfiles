@@ -63,6 +63,9 @@ set nofoldenable
 autocmd Filetype javascript setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
 "++ MAPPINGS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+" Smash escape
+inoremap jk <Esc>
+inoremap kj <Esc>
 " Move arround panels with Ctrl+HJKL
 noremap <C-H> <C-W><Left>
 noremap <C-K> <C-W><Up>
