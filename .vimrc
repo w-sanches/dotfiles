@@ -1,4 +1,14 @@
 "++ PLUGINS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+if empty(glob('$HOME/.vim/autoload/plug.vim'))
+  silent !curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs
+              \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+if has('nvim') && empty(glob('$HOME/.local/share/nvim/site/autoload/plug.vim'))
+  silent !ln -s $HOME/.vim/autoload/plug.vim $HOME/.local/share/nvim/site/autoload/plug.vim
+endif
+
 call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'kien/ctrlp.vim'
