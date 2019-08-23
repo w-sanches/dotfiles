@@ -20,7 +20,8 @@ call plug#end()
 "++ COLOUR SCHEME+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 silent! colorscheme gruvbox
 silent! set termguicolors
-set background=dark
+let g:gruvbox_contrast_light='hard'
+set background=light
 filetype plugin indent on
 set laststatus=2
 syntax enable
