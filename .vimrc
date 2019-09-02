@@ -93,3 +93,7 @@ nnoremap <Leader>yc :let @+=expand('%:p')<CR>
 nnoremap <Leader>yp :let @+=expand('%:p') . ':' . line(".")<CR>
 " Show me those buffers
 nnoremap <leader>b :ls<cr>:b<space>
+
+map <leader>syn :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+      \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+      \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
