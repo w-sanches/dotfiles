@@ -44,7 +44,7 @@ let NERDTreeWinSize=40
 set backspace=2
 set colorcolumn=98,120
 set encoding=utf-8
-set inccommand=split
+silent! set inccommand=split
 set lazyredraw
 set list
 set listchars=tab:>-,extends:›,precedes:‹,trail:·
