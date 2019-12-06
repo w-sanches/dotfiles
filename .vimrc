@@ -12,15 +12,14 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'kien/ctrlp.vim'
-Plug 'morhetz/gruvbox'
+Plug 'nightsense/snow'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 "++ COLOUR SCHEME+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-silent! colorscheme gruvbox
+silent! colorscheme snow
 silent! set termguicolors
-let g:gruvbox_contrast_light='hard'
 set background=light
 filetype plugin indent on
 set laststatus=2
@@ -42,6 +41,7 @@ let NERDTreeWinSize=40
 
 "++ BASE OPTIONS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 set backspace=2
+set clipboard=unnamedplus
 set colorcolumn=98,120
 set encoding=utf-8
 silent! set inccommand=split
@@ -75,6 +75,12 @@ set nofoldenable
 autocmd Filetype javascript setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
 "++ MAPPINGS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+" Leader key
+let mapleader=" "
+" I liked spacemacs
+noremap <leader>fs :w<CR>
+noremap <leader>ft :NERDTreeToggle<CR>
+noremap <leader>wd :q<CR>
 " Smash escape
 inoremap jk <Esc>
 inoremap kj <Esc>
@@ -84,17 +90,16 @@ noremap <C-K> <C-W><Up>
 noremap <C-J> <C-W><Down>
 noremap <C-L> <C-W><Right>
 " Toggles
+noremap <C-]> g<C-]>
 noremap <F2> :set invrelativenumber<CR>
 noremap <F3> :set invnumber<CR>
-noremap <C-]> g<C-]>
-noremap <C-r> :NERDTreeToggle<CR>
 noremap <F12> :setlocal foldenable!<CR>
 " Copy path to clipboard
-nnoremap <Leader>yc :let @+=expand('%:p')<CR>
-nnoremap <Leader>yp :let @+=expand('%:p') . ':' . line(".")<CR>
+nnoremap <leader>yc :let @+=expand('%:p')<CR>
+nnoremap <leader>yp :let @+=expand('%:p') . ':' . line(".")<CR>
 " Show me those buffers
 nnoremap <leader>b :ls<cr>:b<space>
-
+" Show me syntax information
 map <leader>syn :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
       \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
       \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
