@@ -15,6 +15,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'nightsense/snow'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
+Plug 'vim-scripts/paredit.vim'
 call plug#end()
 
 "++ COLOUR SCHEME+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -77,10 +78,6 @@ autocmd Filetype javascript setlocal expandtab shiftwidth=2 softtabstop=2 tabsto
 "++ MAPPINGS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 " Leader key
 let mapleader=" "
-" I liked spacemacs
-noremap <leader>fs :w<CR>
-noremap <leader>ft :NERDTreeToggle<CR>
-noremap <leader>wd :q<CR>
 " Smash escape
 inoremap jk <Esc>
 inoremap kj <Esc>
@@ -97,9 +94,22 @@ noremap <F12> :setlocal foldenable!<CR>
 " Copy path to clipboard
 nnoremap <leader>yc :let @+=expand('%:p')<CR>
 nnoremap <leader>yp :let @+=expand('%:p') . ':' . line(".")<CR>
-" Show me those buffers
-nnoremap <leader>b :ls<cr>:b<space>
 " Show me syntax information
 map <leader>syn :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
       \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
       \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+"++ I LIKED SPACEMACS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+" Buffers
+noremap <leader>bl :ls<cr>:b<space>
+" Files
+noremap <leader>fs :w<CR>
+noremap <leader>ft :NERDTreeToggle<CR>
+" Quit
+noremap <leader>qq :qa<CR>
+" Text
+" Format json files with ruby (thanks Matheus Cendrão)
+map <leader>xjf :%!ruby -rjson -e "print JSON.pretty_generate(JSON.parse(ARGF.read))"<CR>
+" Windows
+noremap <leader>w- :split<CR>
+noremap <leader>w/ :vertical split<CR>
+noremap <leader>wd :q<CR>
