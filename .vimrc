@@ -15,7 +15,6 @@ Plug 'kien/ctrlp.vim'
 Plug 'nightsense/snow'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
-Plug 'vim-scripts/paredit.vim'
 call plug#end()
 
 "++ COLOUR SCHEME+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
