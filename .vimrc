@@ -110,5 +110,5 @@ noremap <leader>qq :qa<CR>
 map <leader>xjf :%!ruby -rjson -e "print JSON.pretty_generate(JSON.parse(ARGF.read))"<CR>
 " Windows
 noremap <leader>w- :split<CR>
-noremap <leader>w/ :vertical split<CR>
+noremap <leader>w\ :vertical split<CR>
 noremap <leader>wd :q<CR>
