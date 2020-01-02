@@ -71,7 +71,7 @@ set tabstop=4
 set foldmethod=syntax
 set nofoldenable
 
-"++ "JAVASCRIPT+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+"++ JAVASCRIPT++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 autocmd Filetype javascript setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
 "++ MAPPINGS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -97,6 +97,7 @@ nnoremap <leader>yp :let @+=expand('%:p') . ':' . line(".")<CR>
 map <leader>syn :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
       \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
       \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
 "++ I LIKED SPACEMACS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 " Buffers
 noremap <leader>bl :ls<cr>:b<space>
