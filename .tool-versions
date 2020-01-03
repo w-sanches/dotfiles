@@ -1,5 +1,5 @@
-elixir 1.9.1-otp-22
-erlang 22.1.1
-nodejs 12.11.1
-ruby 2.6.1
-python 3.8.0
+elixir 1.9.4-otp-22
+erlang 22.2.1
+nodejs 13.5.0
+ruby 2.6.5
+python 3.8.1
