@@ -1,7 +1,6 @@
 " I'm tired of reloading my vimrc file
 command! Resource execute "source ~/.vimrc"
 
-
 " https://gist.github.com/romainl/047aca21e338df7ccf771f96858edb86
 function! CCR()
     let cmdline = getcmdline()
@@ -131,6 +130,7 @@ noremap <C-L> <C-W><Right>
 " Better jumping around tags
 noremap <C-]> g<C-]>
 " Toggles
+noremap <C-b> :NERDTreeToggle<CR>
 noremap <F2> :set invrelativenumber<CR>
 noremap <F3> :set invnumber<CR>
 noremap <F12> :setlocal foldenable!<CR>
