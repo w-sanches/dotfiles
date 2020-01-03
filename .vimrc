@@ -11,6 +11,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'dense-analysis/ale'
 Plug 'kien/ctrlp.vim'
 Plug 'nightsense/snow'
 Plug 'scrooloose/nerdtree'
@@ -26,6 +27,14 @@ set laststatus=2
 syntax enable
 highlight Folded ctermbg=lightgrey
 highlight SpecialKey ctermfg=grey
+"
+"++ ALE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+" Linters
+let g:ale_linters = {}
+let g:ale_linters.elixir = ['credo']
+" Fixers
+let g:ale_fixers = {}
+let g:ale_fixers.elixir = ['mix_format']
 
 "++ CTRL-P++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 if executable('rg')
@@ -97,19 +106,3 @@ nnoremap <leader>yp :let @+=expand('%:p') . ':' . line(".")<CR>
 map <leader>syn :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
       \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
       \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-
-"++ I LIKED SPACEMACS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-" Buffers
-noremap <leader>bl :ls<cr>:b<space>
-" Files
-noremap <leader>fs :w<CR>
-noremap <leader>ft :NERDTreeToggle<CR>
-" Quit
-noremap <leader>qq :qa<CR>
-" Text
-" Format json files with ruby (thanks Matheus Cendrão)
-map <leader>xjf :%!ruby -rjson -e "print JSON.pretty_generate(JSON.parse(ARGF.read))"<CR>
-" Windows
-noremap <leader>w- :split<CR>
-noremap <leader>w\ :vertical split<CR>
-noremap <leader>wd :q<CR>
