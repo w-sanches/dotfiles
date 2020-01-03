@@ -1,6 +1,7 @@
 " I'm tired of reloading my vimrc file
 command! Resource execute "source ~/.vimrc"
 
+
 " https://gist.github.com/romainl/047aca21e338df7ccf771f96858edb86
 function! CCR()
     let cmdline = getcmdline()
@@ -71,7 +72,7 @@ let g:ale_fixers.elixir = ['mix_format']
 
 "++ CTRL-P++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 if executable('rg')
-  set grepprg=rg\ --color-never
+  set grepprg=rg
   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
   let g:ctrlp_use_caching = 0
 endif
@@ -127,8 +128,9 @@ noremap <C-H> <C-W><Left>
 noremap <C-K> <C-W><Up>
 noremap <C-J> <C-W><Down>
 noremap <C-L> <C-W><Right>
-" Toggles
+" Better jumping around tags
 noremap <C-]> g<C-]>
+" Toggles
 noremap <F2> :set invrelativenumber<CR>
 noremap <F3> :set invnumber<CR>
 noremap <F12> :setlocal foldenable!<CR>
