@@ -1,3 +1,36 @@
+" I'm tired of reloading my vimrc file
+command! Resource execute "source ~/.vimrc"
+
+" https://gist.github.com/romainl/047aca21e338df7ccf771f96858edb86
+function! CCR()
+    let cmdline = getcmdline()
+    if cmdline =~ '\v\C^(ls|files|buffers)'
+        return "\<CR>:b"
+    elseif cmdline =~ '\v\C/(#|nu|num|numb|numbe|number)$'
+        return "\<CR>:"
+    elseif cmdline =~ '\v\C^(dli|il)'
+        return "\<CR>:" . cmdline[0] . "j  " . split(cmdline, " ")[1] . "\<S-Left>\<Left>"
+    elseif cmdline =~ '\v\C^(cli|lli)'
+        return "\<CR>:sil " . repeat(cmdline[0], 2) . "\<Space>"
+    elseif cmdline =~ '\C^old'
+        set nomore
+        return "\<CR>:sil se more|e #<"
+    elseif cmdline =~ '\C^changes'
+        set nomore
+        return "\<CR>:sil se more|norm! g;\<S-Left>"
+    elseif cmdline =~ '\C^ju'
+        set nomore
+        return "\<CR>:sil se more|norm! \<C-o>\<S-Left>"
+    elseif cmdline =~ '\C^marks'
+        return "\<CR>:norm! `"
+    elseif cmdline =~ '\C^undol'
+        return "\<CR>:u "
+    else
+        return "\<CR>"
+    endif
+endfunction
+cnoremap <expr> <CR> CCR()
+
 "++ PLUGINS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 if empty(glob('$HOME/.vim/autoload/plug.vim'))
   silent !curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs
@@ -106,3 +139,5 @@ nnoremap <leader>yp :let @+=expand('%:p') . ':' . line(".")<CR>
 map <leader>syn :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
       \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
       \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+" Better searching
+nnoremap <leader>/ :global//#<Left><Left>
