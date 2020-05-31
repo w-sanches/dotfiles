@@ -1,36 +1,6 @@
 " I'm tired of reloading my vimrc file
 command! Resource execute "source ~/.vimrc"
 
-" https://gist.github.com/romainl/047aca21e338df7ccf771f96858edb86
-function! CCR()
-    let cmdline = getcmdline()
-    if cmdline =~ '\v\C^(ls|files|buffers)'
-        return "\<CR>:b"
-    elseif cmdline =~ '\v\C/(#|nu|num|numb|numbe|number)$'
-        return "\<CR>:"
-    elseif cmdline =~ '\v\C^(dli|il)'
-        return "\<CR>:" . cmdline[0] . "j  " . split(cmdline, " ")[1] . "\<S-Left>\<Left>"
-    elseif cmdline =~ '\v\C^(cli|lli)'
-        return "\<CR>:sil " . repeat(cmdline[0], 2) . "\<Space>"
-    elseif cmdline =~ '\C^old'
-        set nomore
-        return "\<CR>:sil se more|e #<"
-    elseif cmdline =~ '\C^changes'
-        set nomore
-        return "\<CR>:sil se more|norm! g;\<S-Left>"
-    elseif cmdline =~ '\C^ju'
-        set nomore
-        return "\<CR>:sil se more|norm! \<C-o>\<S-Left>"
-    elseif cmdline =~ '\C^marks'
-        return "\<CR>:norm! `"
-    elseif cmdline =~ '\C^undol'
-        return "\<CR>:u "
-    else
-        return "\<CR>"
-    endif
-endfunction
-cnoremap <expr> <CR> CCR()
-
 "++ PLUGINS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 if empty(glob('$HOME/.vim/autoload/plug.vim'))
   silent !curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs
@@ -44,30 +14,23 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'dense-analysis/ale'
+Plug 'jremmen/vim-ripgrep'
 Plug 'kien/ctrlp.vim'
-Plug 'nightsense/snow'
+Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 "++ COLOUR SCHEME+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-silent! colorscheme snow
+silent! colorscheme gruvbox
 silent! set termguicolors
-set background=light
+set background=dark
+let g:gruvbox_contrast_dark='hard'
 filetype plugin indent on
 set laststatus=2
 syntax enable
 highlight Folded ctermbg=lightgrey
 highlight SpecialKey ctermfg=grey
-"
-"++ ALE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-" Linters
-let g:ale_linters = {}
-let g:ale_linters.elixir = ['credo']
-" Fixers
-let g:ale_fixers = {}
-let g:ale_fixers.elixir = ['mix_format']
 
 "++ CTRL-P++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 if executable('rg')
@@ -88,6 +51,8 @@ set colorcolumn=98,120
 set encoding=utf-8
 silent! set inccommand=split
 set lazyredraw
+set ignorecase
+set smartcase
 set list
 set listchars=tab:>-,extends:›,precedes:‹,trail:·
 set mouse=a
@@ -130,7 +95,7 @@ noremap <C-L> <C-W><Right>
 " Better jumping around tags
 noremap <C-]> g<C-]>
 " Toggles
-noremap <C-b> :NERDTreeToggle<CR>
+noremap <C-r> :NERDTreeToggle<CR>
 noremap <F2> :set invrelativenumber<CR>
 noremap <F3> :set invnumber<CR>
 noremap <F12> :setlocal foldenable!<CR>
