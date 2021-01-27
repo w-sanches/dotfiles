@@ -14,18 +14,15 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'jremmen/vim-ripgrep'
 Plug 'kien/ctrlp.vim'
-Plug 'morhetz/gruvbox'
+Plug 'dracula/vim'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 "++ COLOUR SCHEME+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-silent! colorscheme gruvbox
+silent! colorscheme dracula
 silent! set termguicolors
-set background=dark
-let g:gruvbox_contrast_dark='hard'
 filetype plugin indent on
 set laststatus=2
 syntax enable
@@ -56,6 +53,8 @@ set smartcase
 set list
 set listchars=tab:>-,extends:›,precedes:‹,trail:·
 set mouse=a
+set nobackup
+set nowritebackup
 set number
 set numberwidth=4
 set relativenumber
